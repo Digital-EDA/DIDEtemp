@@ -1,0 +1,25 @@
+{
+	"toolChain": "xilinx",
+	"prjName": {
+		"PL": "template"
+	},
+	"soc": {
+		"core": "none"
+	},
+	"enableShowLog": false,
+	"device": "none",
+	"library": {
+		"state": "remote",
+		"hardware": {
+			"common": [
+				"Basic/Math/Advance/FFT/Flow",
+				"Basic/Memory/SRAM/Shift/shiftTaps.v",
+				"Basic/Math/Advance/Complex/cmplAdsu.v",
+				"Basic/Math/Advance/Complex/cmplMult.v",
+				"Basic/Memory/SRAM/SDPRAM.v",
+				"Basic/Math/Advance/Complex/cordic.v"
+			],
+			"custom": []
+		}
+	}
+}
