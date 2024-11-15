@@ -1,16 +1,16 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity state_machine IS
+entity vhdl_fsm_1 IS
    port(
       clk      : in   std_logic;
       input    : in   std_logic;
       reset    : in   std_logic;
       output   : out  std_logic_vector(1 downto 0)
    );
-end state_machine;
+end vhdl_fsm_1;
 
-architecture a of state_machine is
+architecture a of vhdl_fsm_1 is
    type STATE_TYPE is (s0, s1, s2);
    signal state : STATE_TYPE;
 begin

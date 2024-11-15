@@ -18,7 +18,7 @@
 
 `define main_out out
 
-module Main #(
+module main #(
     parameter xou, xin
 ) (
     // Main input : shared comment
@@ -28,21 +28,13 @@ module Main #(
 );
 
 /*
-## CN ![gif](https://img1.imgtp.com/2023/08/18/bA4ybk5Z.gif)
+## CN 
 1. 本地文件依赖，include和非include区别
 2. 自动跳转至依赖部分
 3. 依赖注释的悬停提示
     - first point
     - second point
 4. 依赖内容的自动补全
-
-{
-    signal : [
-        { name: "clk",  wave: "p......" },
-        { name: "bus",  wave: "x.34.5x", data: "head body tail" },
-        { name: "wire", wave: "0.1..0." }
-    ]
-}
 */
 // 
 // ## EN

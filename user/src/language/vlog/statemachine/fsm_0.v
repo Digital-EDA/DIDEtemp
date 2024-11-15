@@ -1,4 +1,4 @@
-module verilog_sm (
+module vlog_fsm_0 (
     input clk,
     input rstn
 );

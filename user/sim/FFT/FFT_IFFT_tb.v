@@ -101,6 +101,7 @@ module FFT_IFFT_tb();
     // wire event_data_in_channel_halt;
     // wire event_data_out_channel_halt;
 
+    // xxx module outputs
     // wire [22:0] fft_out_re;
     // wire [22:0] fft_out_im;
     // wire [15:0] fft_ore = fft_out_re[22:7];
@@ -130,6 +131,7 @@ module FFT_IFFT_tb();
     //     .event_data_out_channel_halt(event_data_out_channel_halt)
     // );
 
+    
     wire [15:0] ifft_ore;
     wire [15:0] ifft_oim;
     wire 	o_sync;

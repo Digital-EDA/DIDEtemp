@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 -- Entity with a generic parameter and ports
-entity arithmetic_entity is
+entity top_entity is
     generic (
         WIDTH : integer := 4 -- Parameter for the bit width of the inputs and outputs
     );
@@ -14,10 +14,10 @@ entity arithmetic_entity is
         mode   : in  std_logic; -- '0' for addition, '1' for subtraction
         result : out std_logic_vector(WIDTH-1 downto 0)
     );
-end entity arithmetic_entity;
+end entity top_entity;
 
--- File: arithmetic_entity_behavioral.vhdl
-architecture behavioral of arithmetic_entity is
+-- File: top_entity_behavioral.vhdl
+architecture behavioral of top_entity is
 begin
     process (a, b, mode)
     begin

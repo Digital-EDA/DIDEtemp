@@ -269,7 +269,7 @@ module	fftstage(i_clk, i_reset, i_ce, i_sync, i_data, o_data, o_sync);
 		initial idle = 0;
 
 	end endgenerate
-
+// `define FORMAL
 // For the formal proof, we'll assume the outputs of hwbfly and/or
 // butterfly, rather than actually calculating them.  This will simplify
 // the proof and (if done properly) will be equivalent.  Be careful of

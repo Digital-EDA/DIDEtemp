@@ -1,18 +1,18 @@
--- edgeDetector.vhd
+-- vhdl_fsm_3.vhd
 -- Moore and Mealy Implementation
 
 library ieee;
 use ieee.std_logic_1164.all; 
 
-entity edgeDetector is
+entity vhdl_fsm_3 is
 port(
     clk, reset : in std_logic;
     level : in std_logic;
     Mealy_tick, Moore_tick: out std_logic 
 );
-end edgeDetector;
+end vhdl_fsm_3;
 
-architecture arch of edgeDetector is 
+architecture arch of vhdl_fsm_3 is 
     type stateMealy_type is (zero, one); -- 2 states are required for Mealy
     signal stateMealy_reg, stateMealy_next : stateMealy_type;
     

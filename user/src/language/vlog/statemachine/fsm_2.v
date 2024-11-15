@@ -1,4 +1,4 @@
-module statemachine(
+module vlog_fsm_2(
         input                clock,
         input                reset,
         input      [2 : 0]   req_0,

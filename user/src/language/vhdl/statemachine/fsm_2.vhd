@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity T20_TrafficLights is
+entity vhdl_fsm_2 is
   generic
     (ClockFrequencyHz : integer);
   port
@@ -17,7 +17,7 @@ entity T20_TrafficLights is
     WestGreen   : out std_logic);
 end entity;
 
-architecture rtl of T20_TrafficLights is
+architecture rtl of vhdl_fsm_2 is
 
   -- Enumerated type declaration and state signal declaration
   type t_State is (NorthNext, StartNorth, North, StopNorth,

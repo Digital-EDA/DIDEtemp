@@ -2,14 +2,14 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity vhdl_sm is
+entity vhdl_fsm_0 is
     port (
         clk   : in std_logic;
         reset : in std_logic
     );
-end entity vhdl_sm;
+end entity vhdl_fsm_0;
 
-architecture rtl of vhdl_sm is
+architecture a of vhdl_fsm_0 is
     type sm_t is (IDLE, PUSH_A, PUSH_B, CRC);
     signal state      : sm_t;
     signal next_state : sm_t;
@@ -30,7 +30,7 @@ begin
             state <= next_state;
         end if;
     end process;
-    sm_proc : process (all)
+    sm_proc : process (clk, rstn)
     begin
         case state is
             when IDLE =>

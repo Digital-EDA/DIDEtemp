@@ -1,6 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
-entity StateMachine is
+entity vhdl_fsm_6 is
   port
   (
     clk  : in std_logic;
@@ -8,9 +8,9 @@ entity StateMachine is
     Btn1 : in std_logic;
     LED1 : out std_logic);
   type fsm_state is (z1, z2, z3, z4, z3_dot, z3_double_dot);
-end StateMachine;
+end vhdl_fsm_6;
 
-architecture Behavioral of StateMachine is
+architecture Behavioral of vhdl_fsm_6 is
   signal state : fsm_state := z1;
 begin
   process (clk)

@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity control_logic is
+entity vhdl_fsm_4 is
  port (
   i_clk       : in  std_logic;
   i_rstb      : in  std_logic;
@@ -13,9 +13,9 @@ entity control_logic is
   o_output1   : out std_logic;
   o_output2   : out std_logic;
   o_output3   : out std_logic);
-end control_logic;
+end vhdl_fsm_4;
 
-architecture rtl of control_logic is
+architecture rtl of vhdl_fsm_4 is
   type t_control_logic_fsm is (
                             ST_S1      ,
                             ST_S2      ,
