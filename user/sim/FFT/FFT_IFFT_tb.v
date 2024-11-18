@@ -89,17 +89,17 @@ module FFT_IFFT_tb();
         .oImag(oImag)
     );
 
-    // wire fft_ready;
-    // wire fft_valid;
-    // wire s_axis_config_tready;
-    // wire m_axis_data_tlast;
-    // wire fft_din_data_tlast_delayed;
-    // wire event_frame_started;
-    // wire event_tlast_unexpected;
-    // wire event_tlast_missing;
-    // wire event_status_channel_halt;
-    // wire event_data_in_channel_halt;
-    // wire event_data_out_channel_halt;
+    wire fft_ready;
+    wire fft_valid;
+    wire s_axis_config_tready;
+    wire m_axis_data_tlast;
+    wire fft_din_data_tlast_delayed;
+    wire event_frame_started;
+    wire event_tlast_unexpected;
+    wire event_tlast_missing;
+    wire event_status_channel_halt;
+    wire event_data_in_channel_halt;
+    wire event_data_out_channel_halt;
 
     // xxx module outputs
     // wire [22:0] fft_out_re;
@@ -160,7 +160,7 @@ module FFT_IFFT_tb();
     // end
 
     initial begin
-        $dumpfile("/home/icer/Project/library/user/sim/Basic/Math/Advance/FFT/FFT_IFFT.vcd");        
+        $dumpfile("FFT_IFFT.vcd");        
         $dumpvars(0, FFT_IFFT_tb); 
         #2000 $finish();
     end

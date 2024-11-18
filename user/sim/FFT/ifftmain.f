@@ -1,9 +1,0 @@
-/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/ifftmain.v
-/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/ifftstage.v
-/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/butterfly.v
-/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/longbimpy.v
-/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/bimpy.v
-/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/convround.v
-/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/qtrstage.v
-/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/laststage.v
-/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/bitreverse.v

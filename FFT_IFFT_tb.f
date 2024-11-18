@@ -1,5 +1,4 @@
-/home/dide/project/Digital-Test/DIDEtemp/user/sim/FFT_IFFT_tb.v
-/home/dide/project/Digital-IDE/library/Basic/Math/Advance/FFT/Flow/top/ifft.v
+/home/dide/project/Digital-Test/DIDEtemp/user/sim/FFT/FFT_IFFT_tb.v
 /home/dide/project/Digital-IDE/library/Basic/Math/Advance/FFT/Flow/top/fft.v
 /home/dide/project/Digital-IDE/library/Basic/Math/Advance/FFT/Flow/stage/fft_stage.v
 /home/dide/project/Digital-IDE/library/Basic/Math/Advance/FFT/Flow/stage/BF_stage.v
@@ -10,11 +9,13 @@
 /home/dide/project/Digital-IDE/library/Basic/Math/Advance/FFT/Flow/utils/ftwiddle.v
 /home/dide/project/Digital-IDE/library/Basic/Math/Advance/Complex/cordic.v
 /home/dide/project/Digital-IDE/library/Basic/Math/Advance/Complex/cmplMult.v
+/home/dide/project/Digital-IDE/library/Basic/Math/Advance/FFT/Flow/top/ifft.v
 /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/ifftstage.v
+/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/hwbfly.v
+/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/convround.v
 /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/butterfly.v
 /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/longbimpy.v
 /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/bimpy.v
-/home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/convround.v
 /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/qtrstage.v
 /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/laststage.v
 /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/bitreverse.v

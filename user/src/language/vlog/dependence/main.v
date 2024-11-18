@@ -100,8 +100,6 @@ u_cordic(
     .z_o    	(z_o     )
 );
 
-
-
 // CN: 跨文件宏定义
 assign `main_out = `K_COE;
 

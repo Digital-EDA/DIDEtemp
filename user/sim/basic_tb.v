@@ -73,7 +73,7 @@ module basic_tb();
     initial begin
         $dumpfile("basic_tb.vcd");        
         $dumpvars(0, basic_tb);    
-        #500 $finish;
+        #5000 $finish;
     end
 
 

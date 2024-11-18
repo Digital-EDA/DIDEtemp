@@ -158,7 +158,7 @@ module tb_xpm();
     );
 
     initial begin            
-        $dumpfile("wave.vcd");        
+        $dumpfile("xpm_tb.vcd");        
         $dumpvars(0, tb_xpm);    
         #50000 $finish;
     end
