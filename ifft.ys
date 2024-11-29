@@ -1,0 +1,15 @@
+read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/ifftmain.v
+read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/ifftstage.v
+read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/hwbfly.v
+read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/convround.v
+read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/butterfly.v
+read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/longbimpy.v
+read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/bimpy.v
+read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/qtrstage.v
+read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/laststage.v
+read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/bitreverse.v
+hierarchy -top ifftmain
+flatten
+# synth_efinix -top ifftmain -json design.json
+write_verilog -noattr ifft.v
+# write_edif design.edif
