@@ -3,18 +3,18 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity my_entity is
+entity vhdl_utils is
     port (
         a : in std_logic;
         b : in std_logic;
         y : out std_logic
     );
-end entity my_entity;
+end entity vhdl_utils;
 
-architecture or_arch of top_module is
-begin
-    -- y <= a or b;
-end architecture or_arch;
+-- architecture arch of mixed is
+-- begin
+--     -- y <= a or b;
+-- end architecture arch;
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

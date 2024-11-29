@@ -16,107 +16,59 @@
 
 `include "head.v"
 
-`define main_out out
+`define main_out led
 
 module main #(
     parameter xou, xin
 ) (
     // Main input : shared comment
-    input clk, reset, a, b, c,
+    input clock, reset,
+
     // Main output
-    output Qus, Qs, Qa, `main_out
+    output [xou-1] `main_out
 );
 
-/*
-## CN 
-1. 本地文件依赖，include和非include区别
-2. 自动跳转至依赖部分
-3. 依赖注释的悬停提示
-    - first point
-    - second point
-4. 依赖内容的自动补全
-*/
-// 
-// ## EN
-// 1. should be included from head.v
-// 2. no include from child.v or head.v
-child u0_child(
-    .a(a),
-    .b(b),
-    .c(c),
-    .Result(Qus)
+wire out;
+
+reg value;
+
+always @(posedge clock or posedge reset) begin : ACCUM
+    if (reset) begin
+        value <= 1'b0;
+    end
+    else begin
+        value <= value + out;
+    end
+end
+
+mixed u_mixed (
+    .a(1'b1),
+    .b(value),
+    .sum(out),
+    .y1(`main_out[0]),
+    .y2(`main_out[1])
+)
+
+// cfg_structural u_mixed (
+//     .a(1'b1),
+//     .b(value),
+//     .sum(out),
+//     .y1(),
+//     .y2()
+// )
+
+// outports wire
+wire [`W_COE-1:0] 	count;
+
+counter #(
+	.START_VALUE 	( 8'b0000_1111  ),
+	.STEP        	( 1'b1          ))
+u_counter(
+	.clock 	( clock  ),
+	.rstn  	( rstn   ),
+	.count 	( count  )
 );
 
-//
-child u1_child(a,b,c,Qus);
-
-// ## CN: 
-// 同名不同端口的模块定位
-child u2_child(
-    .port_a(a),
-    .port_b(b),
-    .port_c(c),
-    .out_q(Qs)
-);
-
-moreModule u_moreModule(
-    .port_a(a),
-    .port_b(b), 
-    .Q(Qa)
-);
-
-// CN: 库 module（外部文件）的依赖
-
-wire [11:0] 	x_o; // cordic x 输出
-
-// cordic y 输出
-wire [11:0] 	y_o; 
-
-// 隔离
-
-// cordic x 输出
-wire [11:0] 	phase_out; // `相位`输出
-
-/*block*/
-// valid out
-wire            valid_out; // line
-
-cordic #(
-    .STYLE      	("ROTATE"  ),
-    .CALMODE    	("FAST"    ),
-    .XY_BITS    	(12        ),
-    .PH_BITS    	(32        ),
-    .ITERATIONS 	(32        ))
-u_cordic(
-    .clock  	(clock   ),
-    .reset  	(reset   ),
-    .ivalid 	(ivalid  ),
-    .x_i    	(x_i     ),
-    .y_i    	(y_i     ),
-    .z_i    	(z_i     ),
-    .ovalid 	(ovalid  ),
-    .x_o    	(x_o     ),
-    .y_o    	(y_o     ),
-    .z_o    	(z_o     )
-);
-
-// CN: 跨文件宏定义
-assign `main_out = `K_COE;
+assign `main_out[3:2] = count[`W_COE:`W_COE-1];
 
 endmodule
-
-/* @wavedrom this is wavedrom demo2
-{ 
-    signal: [
-    { name: "pclk", wave: 'p.......' },
-    { name: "Pclk", wave: 'P.......' },
-    { name: "nclk", wave: 'n.......' },
-    { name: "Nclk", wave: 'N.......' },
-    {},
-    { name: 'clk0', wave: 'phnlPHNL' },
-    { name: 'clk1', wave: 'xhlhLHl.' },
-    { name: 'clk2', wave: 'hpHplnLn' },
-    { name: 'clk3', wave: 'nhNhplPl' },
-    { name: 'clk4', wave: 'xlh.L.Hx' },
-]}
-*/

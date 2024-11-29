@@ -1,30 +1,31 @@
-`define K_COE 34
+`define W_COE 8
 
-module child (
-    // this is a test
-    input a, b, c,
-    // a test
-    output Result       // balabalabala for result
-);
-
-    // a & b | ((b & c) & (b | c))
-    // &=*, |=+               AB + BC(B+C)
-    // Distribute             AB + BBC + BCC
-    // Simplify AA = A        AB + BC + BC
-    // Simplify A + A = A     AB + BC
-    // Factor                 B(A+C)
-
-    wire o;
-    IBUFDS #(
-        .DIFF_TERM("FALSE"),        // Differential Termination
-        .IBUF_LOW_PWR("TRUE"),      // Low power="TRUE", Highest performance="FALSE" 
-        .IOSTANDARD("DEFAULT"))     // Specify the input I/O standard
-    IBUFDS_inst (
-        .O(o),      // Buffer output
-        .I(a),      // Diff_p buffer input (connect directly to top-level port)
-        .IB(b)      // Diff_n buffer input (connect directly to top-level port)
+// 2-bit Full Adder module
+module full_adder #(
+        parameter WIDTH = `W_COE
+    ) (
+        input  [WIDTH-1:0] A,     // 2-bit first input
+        input  [WIDTH-1:0] B,     // 2-bit second input
+        input  Cin,         // Carry-in
+        output [WIDTH-1:0] Sum,  // 2-bit sum output
+        output Cout        // Carry-out
     );
+    
+    wire [WIDTH:0] Ca;           // Intermediate carry
+    assign Ca[0] = Cin;
 
-    assign Result = a & (b | c) ^ o;
-
+    genvar i;
+    generate for(i = 0 ; i < (WIDTH-1); i = i + 1) begin : U    
+        // First 1-bit Full Adder for least significant bit
+        full_adder FA (
+            .A(A[i]),
+            .B(B[i]),
+            .Cin(Ca[i]),
+            .Sum(Sum[i]),
+            .Cout(Ca[i+1])
+        );
+    end
+    endgenerate
+    
 endmodule
+
