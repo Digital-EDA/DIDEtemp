@@ -17,7 +17,8 @@
 				"Basic/Math/Advance/Complex/cmplAdsu.v",
 				"Basic/Math/Advance/Complex/cmplMult.v",
 				"Basic/Memory/SRAM/SDPRAM.v",
-				"Basic/Math/Advance/Complex/cordic.v"
+				"Basic/Math/Advance/Complex/cordic.v",
+				"Basic/Math/Advance/FFT"
 			],
 			"custom": []
 		}

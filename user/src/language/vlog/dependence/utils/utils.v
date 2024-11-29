@@ -1,23 +1,36 @@
 module counter #(
         parameter START_VALUE = 8'b0000_1111
     )(
-        input               clk,
-        input               rst_n,
-        output reg  [7:0]   cnt
+        input               clock,
+        input               rstn,
+        output reg  [7:0]   count
     );
 
     parameter STEP = 1'b1;
 
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n)
-            cnt <= START_VALUE;
-        else
-            cnt <= cnt + STEP;
+    always @(posedge clock or negedge rstn) begin
+        if (!rstn) begin
+            count <= START_VALUE;
+        end
+        else begin
+            count <= count + STEP;
+        end
     end
 
 endmodule
 
-module fifo();
+// 1-bit Full Adder module
+module full_adder_1bit (
+        input A,           // First input bit
+        input B,           // Second input bit
+        input Cin,         // Carry-in bit
+        output Sum,        // Sum output
+        output Cout        // Carry-out output
+    );
 
+    assign Sum = A ^ B ^ Cin;      // Sum calculation
 
-endmodule //fifo
+    // Carry-out calculation
+    assign Cout = (A & B) | (B & Cin) | (A & Cin); 
+
+endmodule

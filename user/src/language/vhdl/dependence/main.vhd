@@ -1,69 +1,69 @@
 
-architecture or_arch of my_entity is
+architecture or_arch of vhdl_utils is
 begin
-    -- y <= a or b;
+    y <= a or b;
 end architecture or_arch;
 
-configuration cfg_or_arch of my_entity is
-    for or_arch
-    end for;
-end cfg_or_arch;
-
-
 library IEEE;
+library work;
 use IEEE.STD_LOGIC_1164.ALL;
 use work.my_package.ALL;
 
-entity top_module is
+entity mixed is
     port (
-        a : in std_logic;
-        b : in std_logic;
+        a : in MY_VECTOR;
+        b : in MY_VECTOR;
+        sum : out MY_VECTOR;
         y1 : out std_logic;
         y2 : out std_logic
     );
-end top_module;
+end mixed;
 
 
-architecture structural of top_module is
-    -- 声明加法器的组件
-    component adder
+architecture structural of mixed is
+
+    component full_adder
         generic (
             WIDTH : integer := 8
         );
         port (
-            a : in std_logic;
-            b : in std_logic;
-            sum : out std_logic
+            A : in MY_VECTOR;
+            B : in MY_VECTOR;
+            Cin : in std_logic;
+            Cout : out std_logic;
+            Sum : out MY_VECTOR
         );
     end component;
-    signal temp : work.my_package.MY_VECTOR;
+    signal Cin : std_logic;
+    signal Cout : std_logic;
 begin
-    -- 实例化加法器组件
-    u_adder : adder
-        generic map (
-            WIDTH => 8 -- 设置宽度为8位
-        )
-        port map (
-            a => a,
-            b => b,
-            sum => y1 -- 连接顶层端口到组件端口
-        );
 
-        u1: entity work.my_entity(or_arch)
-        port map (
-            a => a,
-            b => b,
-            y => y1
-        );
+    u_adder : full_adder
+    generic map (
+        WIDTH => 8 
+    )
+    port map (
+        A => a,
+        B => b,
+        Cin => Cin,
+        Cout => Cout,
+        Sum => sum
+    );
 
-        u2: entity work.my_entity(and_arch)
-        port map (
-            a => a,
-            b => b,
-            y => y2
-        );
+    u1 : entity work.vhdl_utils(or_arch)
+    port map (
+        a => Cin,
+        b => Cout,
+        y => y1
+    );
 
-        
+    u2 : configuration work.cfg_and_arch
+    port map (
+        a => Cin,
+        b => Cout,
+        y => y2
+    );
+
 end architecture structural;
 
 
