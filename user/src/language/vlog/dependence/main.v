@@ -3,7 +3,7 @@
 
 */
 
-// CN: 代码转文档测试功能
+// CN: 代码转文档测试功�?
 /* @wavedrom this is wavedrom demo1
 {
     signal : [
@@ -19,13 +19,13 @@
 `define main_out led
 
 module main #(
-    parameter xou, xin
+    parameter xou = 10, xin = 9
 ) (
     // Main input : shared comment
     input clock, reset,
 
     // Main output
-    output [xou-1] `main_out
+    output [(xou-1):0] `main_out
 );
 
 wire out;
@@ -41,31 +41,31 @@ always @(posedge clock or posedge reset) begin : ACCUM
     end
 end
 
-mixed u_mixed (
-    .a(1'b1),
-    .b(value),
-    .sum(out),
-    .y1(`main_out[0]),
-    .y2(`main_out[1])
-)
+//mixed u_mixed (
+//    .a(1'b1),
+//    .b(value),
+//    .sum(out),
+//    .y1(`main_out[0]),
+//    .y2(`main_out[1])
+//);
 
-// cfg_structural u_mixed (
-//     .a(1'b1),
-//     .b(value),
-//     .sum(out),
-//     .y1(),
-//     .y2()
-// )
+ cfg_structural u_mixed (
+     .a(1'b1),
+     .b(value),
+     .sum(out),
+     .y1(),
+     .y2()
+ );
 
 // outports wire
-wire [`W_COE-1:0] 	count;
+wire [(`W_COE-1):0] 	count;
 
 counter #(
 	.START_VALUE 	( 8'b0000_1111  ),
 	.STEP        	( 1'b1          ))
 u_counter(
 	.clock 	( clock  ),
-	.rstn  	( rstn   ),
+	.rstn  	( ~reset ),
 	.count 	( count  )
 );
 

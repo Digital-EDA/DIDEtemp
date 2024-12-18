@@ -4,6 +4,11 @@ begin
     y <= a or b;
 end architecture or_arch;
 
+configuration cfg_or_arch of vhdl_utils is
+    for or_arch
+    end for;
+end cfg_or_arch;
+
 library IEEE;
 library work;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -66,4 +71,7 @@ begin
 
 end architecture structural;
 
-
+configuration cfg_structural of mixed is
+    for structural
+    end for;
+end cfg_structural;
