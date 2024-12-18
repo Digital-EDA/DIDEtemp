@@ -3,6 +3,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+
 entity vhdl_utils is
     port (
         a : in std_logic;
