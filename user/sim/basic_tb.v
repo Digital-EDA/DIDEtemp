@@ -7,6 +7,7 @@ module basic_tb();
     reg                   sys_rst = 1;
     reg [DATA_WIDTH-1:0]  data;
 
+
     always begin
         #(500/MAIN_FRE) sys_clk <= ~sys_clk;
     end
@@ -72,8 +73,9 @@ module basic_tb();
 
     initial begin
         $dumpfile("basic_tb.vcd");        
-        $dumpvars(0, basic_tb);    
+        $dumpvars(0, basic_tb);
         #5000 $finish;
+
     end
 
 
