@@ -18,10 +18,7 @@ module full_adder #(
     generate for(i = 0 ; i < (WIDTH-1); i = i + 1) begin : U    
         // First 1-bit Full Adder for least significant bit
         full_adder_1bit FA (
-<<<<<<< HEAD
 //        full_adder FA (
-=======
->>>>>>> 2978677ed30d1ea6a86156b247325e2d1659c2f3
             .A(A[i]),
             .B(B[i]),
             .Cin(Ca[i]),

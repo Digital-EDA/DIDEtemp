@@ -9,8 +9,6 @@ configuration cfg_and_arch of vhdl_utils is
     end for;
 end cfg_and_arch;
 
-
-
 --configuration cfg_structural of mixed is
 --    for structural
 --    end for;
