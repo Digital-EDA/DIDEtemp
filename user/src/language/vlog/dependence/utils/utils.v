@@ -1,12 +1,13 @@
 module counter #(
-        parameter START_VALUE = 8'b0000_1111
+        parameter START_VALUE = 8'b0000_1111,
+        parameter STEP = 1'b1
     )(
         input               clock,
         input               rstn,
         output reg  [7:0]   count
     );
 
-    parameter STEP = 1'b1;
+    
 
     always @(posedge clock or negedge rstn) begin
         if (!rstn) begin

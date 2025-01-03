@@ -2,7 +2,8 @@
 architecture and_arch of vhdl_utils is
 begin
     y <= a and b;
-end architecture and_arch;
+end architecture and_arch
+
 
 configuration cfg_and_arch of vhdl_utils is
     for and_arch

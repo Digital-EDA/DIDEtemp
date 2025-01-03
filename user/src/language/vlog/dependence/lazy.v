@@ -1,6 +1,6 @@
 module lazy (
     input      clock,
-    input      reset,
+    input      reset
 );
 
 // output declaration of module cordic
@@ -28,5 +28,5 @@ u_cordic(
     .z_o    	(z_o     )
 );
 
-    
-endmodule //lazy
+
+endmodule

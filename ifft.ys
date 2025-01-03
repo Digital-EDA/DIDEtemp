@@ -8,8 +8,7 @@ read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/bimpy.v
 read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/qtrstage.v
 read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/laststage.v
 read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/bitreverse.v
-hierarchy -top ifftmain
-flatten
-# synth_efinix -top ifftmain -json design.json
-write_verilog -noattr ifft.v
-# write_edif design.edif
+synth -top ifftmain
+write_json /home/dide/project/yosys/ifft.json
+write_verilog -noattr /home/dide/project/yosys/ifft.v
+write_edif /home/dide/project/yosys/design.edif

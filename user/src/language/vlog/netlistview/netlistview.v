@@ -1,4 +1,3 @@
-
 module netlistview(clock, data_in, up, down, carry_out, borrow_out, count_out, parity_out);
 
     input [8:0] data_in;
