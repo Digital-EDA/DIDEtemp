@@ -105,35 +105,35 @@ module FFT_IFFT_tb();
     wire event_data_out_channel_halt;
 
     // // xxx module outputs
-    wire [22:0] fft_out_re;
-    wire [22:0] fft_out_im;
-    wire [15:0] fft_ore = fft_out_re[22:7];
-    wire [15:0] fft_oim = fft_out_im[22:7];
-    wire idle_line1;
-    wire idle_line2;
+    // wire [22:0] fft_out_re;
+    // wire [22:0] fft_out_im;
+    // wire [15:0] fft_ore = fft_out_re[22:7];
+    // wire [15:0] fft_oim = fft_out_im[22:7];
+    // wire idle_line1;
+    // wire idle_line2;
 
-    // dft_inst(xfft_v9.xfft_v9_arch)
-    xfft_v9 dft_inst (
-        .aclk(iclk),       // input wire aclk
-        .aresetn(rstn),
-        .s_axis_config_tdata({7'b0, FFT_IFFT}),                         
-        .s_axis_config_tvalid(1'b1),                               
-        .s_axis_config_tready(s_axis_config_tready),   
-        .s_axis_data_tdata({iImag, iReal}),                   
-        .s_axis_data_tvalid(ien),                   
-        .s_axis_data_tready(fft_ready),                   
-        .s_axis_data_tlast(fft_din_data_tlast_delayed),                
-        .m_axis_data_tdata({idle_line1, fft_out_im, idle_line2, fft_out_re}),                 
-        .m_axis_data_tvalid(fft_valid),                 
-        .m_axis_data_tready(1'b1),    
-        .m_axis_data_tlast(m_axis_data_tlast),                     
-        .event_frame_started(event_frame_started),             
-        .event_tlast_unexpected(event_tlast_unexpected),         
-        .event_tlast_missing(event_tlast_missing),               
-        .event_status_channel_halt(event_status_channel_halt),   
-        .event_data_in_channel_halt(event_data_in_channel_halt), 
-        .event_data_out_channel_halt(event_data_out_channel_halt)
-    );
+    // // dft_inst(xfft_v9.xfft_v9_arch)
+    // xfft_v9 dft_inst (
+    //     .aclk(iclk),       // input wire aclk
+    //     .aresetn(rstn),
+    //     .s_axis_config_tdata({7'b0, FFT_IFFT}),                         
+    //     .s_axis_config_tvalid(1'b1),                               
+    //     .s_axis_config_tready(s_axis_config_tready),   
+    //     .s_axis_data_tdata({iImag, iReal}),                   
+    //     .s_axis_data_tvalid(ien),                   
+    //     .s_axis_data_tready(fft_ready),                   
+    //     .s_axis_data_tlast(fft_din_data_tlast_delayed),                
+    //     .m_axis_data_tdata({idle_line1, fft_out_im, idle_line2, fft_out_re}),                 
+    //     .m_axis_data_tvalid(fft_valid),                 
+    //     .m_axis_data_tready(1'b1),    
+    //     .m_axis_data_tlast(m_axis_data_tlast),                     
+    //     .event_frame_started(event_frame_started),             
+    //     .event_tlast_unexpected(event_tlast_unexpected),         
+    //     .event_tlast_missing(event_tlast_missing),               
+    //     .event_status_channel_halt(event_status_channel_halt),   
+    //     .event_data_in_channel_halt(event_data_in_channel_halt), 
+    //     .event_data_out_channel_halt(event_data_out_channel_halt)
+    // );
 
     wire [15:0] ifft_ore;
     wire [15:0] ifft_oim;

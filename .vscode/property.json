@@ -7,7 +7,7 @@
 		"core": "none"
 	},
 	"enableShowLog": false,
-	"device": "xc7z020clg400-2",
+	"device": "none",
 	"library": {
 		"state": "remote",
 		"hardware": {
