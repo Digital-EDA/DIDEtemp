@@ -62,7 +62,7 @@ begin
         y => y1
     );
 
-    u2 : configuration work.cfg_and_arch
+    u2 : entity work.vhdl_utils(and_arch)
     port map (
         a => Cin,
         b => Cout,

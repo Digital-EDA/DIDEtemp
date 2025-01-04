@@ -163,4 +163,4 @@ module tb_xpm();
         #50000 $finish;
     end
 
-endmodule  //TOP
+endmodule
