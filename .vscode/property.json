@@ -7,18 +7,21 @@
 		"core": "none"
 	},
 	"enableShowLog": false,
-	"device": "none",
+	"device": "xc7a35tftg256-1",
 	"library": {
 		"state": "remote",
 		"hardware": {
 			"common": [
-				"Basic/Math/Advance/FFT/Flow",
 				"Basic/Memory/SRAM/Shift/shiftTaps.v",
 				"Basic/Math/Advance/Complex/cmplAdsu.v",
 				"Basic/Math/Advance/Complex/cmplMult.v",
 				"Basic/Memory/SRAM/SDPRAM.v",
 				"Basic/Math/Advance/Complex/cordic.v",
-				"Basic/Math/Advance/Complex/cordic.v"
+				"Basic/Memory/SRAM/DPRAM.v",
+				"Apply/Comm/MDS/Modulation/AnalogMod.v",
+				"Basic/Math/FixedPoint/accuml.v",
+				"Basic/Source/LUT/Sin.v",
+				"Basic/Math/Advance/FFT/Flow"
 			],
 			"custom": []
 		}

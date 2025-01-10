@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2024 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2025 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -182,7 +182,7 @@ ARCHITECTURE xfft_v9_arch OF xfft_v9 IS
 BEGIN
   U0 : xfft_v9_1_1
     GENERIC MAP (
-      C_XDEVICEFAMILY => "zynq",
+      C_XDEVICEFAMILY => "artix7",
       C_S_AXIS_CONFIG_TDATA_WIDTH => 8,
       C_S_AXIS_DATA_TDATA_WIDTH => 32,
       C_M_AXIS_DATA_TDATA_WIDTH => 48,

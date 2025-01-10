@@ -1,2 +1,2 @@
 user/src/language/vlog/statemachine/*
-user/src/language/vhdl/statemachine
+user/src/language/vhdl/statemachine/*.vhd

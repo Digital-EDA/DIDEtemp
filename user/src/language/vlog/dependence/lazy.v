@@ -5,9 +5,9 @@ module lazy (
 
 // output declaration of module cordic
 wire ovalid;
-wire [XY_BITS-1:0] x_o;
-wire [XY_BITS-1:0] y_o;
-wire [PH_BITS-1:0] z_o;
+// wire [XY_BITS-1:0] x_o;
+// wire [XY_BITS-1:0] y_o;
+// wire [PH_BITS-1:0] z_o;
 
 cordic #(
     .STYLE      	("ROTATE"  ),

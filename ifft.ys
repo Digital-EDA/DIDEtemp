@@ -1,14 +1,14 @@
-read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/ifftmain.v
-read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/ifftstage.v
-read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/hwbfly.v
-read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/convround.v
-read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/butterfly.v
-read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/longbimpy.v
-read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/bimpy.v
-read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/qtrstage.v
-read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/laststage.v
-read_verilog /home/dide/project/Digital-Test/DIDEtemp/user/src/ifft/bitreverse.v
+read_verilog D:/Project/FPGA/Design/TCL_project/Test/DIDEtemp/user/src/ifft/ifft/ifftmain.v
+read_verilog D:/Project/FPGA/Design/TCL_project/Test/DIDEtemp/user/src/ifft/ifft/ifftstage.v
+read_verilog D:/Project/FPGA/Design/TCL_project/Test/DIDEtemp/user/src/ifft/ifft/hwbfly.v
+read_verilog D:/Project/FPGA/Design/TCL_project/Test/DIDEtemp/user/src/ifft/ifft/convround.v
+read_verilog D:/Project/FPGA/Design/TCL_project/Test/DIDEtemp/user/src/ifft/ifft/butterfly.v
+read_verilog D:/Project/FPGA/Design/TCL_project/Test/DIDEtemp/user/src/ifft/ifft/longbimpy.v
+read_verilog D:/Project/FPGA/Design/TCL_project/Test/DIDEtemp/user/src/ifft/ifft/bimpy.v
+read_verilog D:/Project/FPGA/Design/TCL_project/Test/DIDEtemp/user/src/ifft/ifft/qtrstage.v
+read_verilog D:/Project/FPGA/Design/TCL_project/Test/DIDEtemp/user/src/ifft/ifft/laststage.v
+read_verilog D:/Project/FPGA/Design/TCL_project/Test/DIDEtemp/user/src/ifft/ifft/bitreverse.v
 synth -top ifftmain
-write_json /home/dide/project/yosys/ifft.json
-write_verilog -noattr /home/dide/project/yosys/ifft.v
-write_edif /home/dide/project/yosys/design.edif
+write_json ./ifft.json
+write_verilog -noattr ./ifft.v
+write_edif ./design.edif
